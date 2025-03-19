@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: Chat-DB
+    restart: always
+    environment:
+      - POSTGRES_USER=duane
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=Chat-DB
+    ports:
+      - "5432:5432"
+    volumes:
+      - chat_data:/var/lib/postgresql/data
+    networks:
+      - Chat-Network
+  
+  api:
+    build: .
+    container_name: Chat-API
+    restart: always
+    environment:
+      - DATABASE_URL=postgresql://duane:password@db:5432/Chat-DB
+      - PORT=3008
+      - API_KEY=G3sk4yP-CCh7mX8f
+    ports:
+      - "3008:3008"
+    depends_on:
+      - db
+    networks:
+      - Chat-Network
+
+volumes:
+  chat_data:
+
+networks:
+  Chat-Network:
