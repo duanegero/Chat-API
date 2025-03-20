@@ -42,6 +42,7 @@ const getUserDetails = async (userId) => {
 
 const getUserEmail = async (email) => {
   try {
+    //variable to handle prisma query
     const userEmail = await prisma.user_info.findUnique({
       where: { email: email },
       select: {
@@ -68,6 +69,7 @@ const getUserEmail = async (email) => {
 
 const getAllUsersDetails = async () => {
   try {
+    //variable to handle prisma query
     const allUsersDeatils = await prisma.user_info.findMany({
       select: {
         first_name: true,
@@ -84,11 +86,13 @@ const getAllUsersDetails = async () => {
 
     return allUsersDeatils;
   } catch (error) {
+    //catch and log any errors
     console.error("Error fetching users:", error);
     throw error;
   }
 };
 
+//export any functions to be used else where
 module.exports = {
   getUserDetails,
   getUserEmail,

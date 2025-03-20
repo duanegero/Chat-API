@@ -55,5 +55,6 @@ router.post("/", async (req, res) => {
   }
 });
 
+//export router and key to use else where
 module.exports = router;
 module.exports.apiKey = apiKey;

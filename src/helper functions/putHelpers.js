@@ -75,6 +75,7 @@ const updateUser = async (userId, first_name, last_name, age) => {
     //return results to use else where
     return updateUserDetails;
   } catch (error) {
+    //catch and log any errors
     console.error("Error updating user details.", error.message);
     return { error: "An error occurred while updating user details." };
   }
@@ -115,9 +116,11 @@ const updateEmail = async (userId, newEmail) => {
     //return to use else where
     return updatedEmail;
   } catch (error) {
+    //catch and log any error
     console.error("Error updating email.", error.message);
     return { error: "An error occurred while updating email." };
   }
 };
 
+//export function to use else where
 module.exports = { updateUsername, updateUser, updateEmail };

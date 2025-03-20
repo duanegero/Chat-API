@@ -21,6 +21,7 @@ const deleteUser = async (userId) => {
     where: { user_id: userIdInt },
   });
 
+  //delete the user login details
   await prisma.user_login.delete({
     where: {
       id: userIdInt,
@@ -30,6 +31,7 @@ const deleteUser = async (userId) => {
   return deleteUser;
 };
 
+//export function to use else where
 module.exports = {
   deleteUser,
 };

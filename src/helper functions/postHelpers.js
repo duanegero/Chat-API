@@ -15,6 +15,7 @@ const postNewUser = async (
   const ageInt = parseInt(age, 10);
 
   try {
+    //variable to handle prisma query
     const existingUser = await prisma.user_info.findFirst({
       where: {
         OR: [{ email }, { user_login: { is: { username: username } } }],
@@ -68,6 +69,7 @@ const postNewUser = async (
 };
 
 const postLoginCredentials = async (username) => {
+  //variable to handle prisma query
   const checkUser = await prisma.user_login.findUnique({
     where: {
       username: username,
@@ -77,6 +79,7 @@ const postLoginCredentials = async (username) => {
   return checkUser;
 };
 
+//export functions to use else where
 module.exports = {
   postNewUser,
   postLoginCredentials,
