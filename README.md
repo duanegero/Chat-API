@@ -5,9 +5,9 @@ This is a RESTful API and database designed to handle requests from the Chat fro
 - [Installation](#installation)
 - [Docker](#docker)
 - [API Endpoints](#api-endpoints)
+- [Usage](#usage)
 - [Frontend Repository](#frontend)
 - [Socket.IO Repository](#socket)
-- [Usage](#usage)
 
 ## Installation
 
@@ -60,3 +60,13 @@ Once the Docker network and container are up and running, you can interact with 
 ```
 
 The API will generate a unique User ID and a `created_at` timestamp automatically upon successful user creation.
+
+## Frontend
+
+## Socket
+
+The Socket.IO server can be found can be found here
+
+https://github.com/duanegero/Chat-Socket.git
+
+For more information, please refer to the Socket.IO documentation for details on setting up and connecting to the socket server, as well as available events and usage examples.
