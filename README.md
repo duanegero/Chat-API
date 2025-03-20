@@ -63,6 +63,12 @@ The API will generate a unique User ID and a `created_at` timestamp automaticall
 
 ## Frontend
 
+The Frontend React + Vite app can be found here
+
+https://github.com/duanegero/Chat-App.git
+
+For more information, please refer to the Frontend App Documentation for details on navigating the user interface, interacting with chat features, and managing user accounts.
+
 ## Socket
 
 The Socket.IO server can be found can be found here
